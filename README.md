@@ -1,4 +1,4 @@
-# 🛫 SkyTact: Advanced Aviation Intelligence
+# SkyTact: Advanced Aviation Intelligence
 
 ![SkyTact Banner](./docs/assets/banner.png)
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 📽️ Mission Preview
+## Mission Preview
 ![SkyTact Demo](./docs/assets/demo.webp)
 
 ---
@@ -23,7 +23,7 @@ SkyTact is the result of that transformation: a professional-grade aviation inte
 
 ---
 
-##  Core Mission Features
+## Core Mission Features
 
 ###  Performance-Based Geospatial HUD
 The heart of SkyTact is an interactive 3D globe powered by **Three.js** and **WebGL**. It's not just for show—flight paths are procedurally generated and styled based on aircraft performance:
@@ -47,15 +47,6 @@ Built on a "Hud-First" philosophy, the interface is a **95% width wide-screen ta
 |---|---|---|---|
 | **React 18** | **React-Globe.gl** | **AviationWeather API** | **Tactical CSS** |
 | **Vite** | **Three.js** | **OpenWeatherMap** | **Responsive HUD** |
-
----
-
-##  Multi-Device Command
-SkyTact is fully responsive. Whether you're in a desktop control center or holding an iPad on the ramp, the interface adapts:
-- **Desktop**: 1800px wide-screen tactical HUD.
-- **Mobile**: Single-column stacked inputs with optimized padding and touch-safe interaction (3D tilt disabled for stability).
-
-![Mobile View](./docs/assets/mobile_view.png)
 
 ---
 
