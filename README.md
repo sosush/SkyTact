@@ -1,8 +1,13 @@
 # 🛫 SkyTact: Advanced Aviation Intelligence
 
-![SkyTact Banner](file:///Users/sohinibanerjee/.gemini/antigravity/brain/9c1e52eb-95ee-4583-b2b8-b47952f618cf/skytact_github_banner_1775235201009.png)
+![SkyTact Banner](./docs/assets/banner.png)
 
 > **Status**: Mission Ready. Deploying Tactical HUD... ⚡
+
+---
+
+## 📽️ Mission Preview
+![SkyTact Demo](./docs/assets/demo.webp)
 
 ---
 
@@ -50,7 +55,7 @@ SkyTact is fully responsive. Whether you're in a desktop control center or holdi
 - **Desktop**: 1800px wide-screen tactical HUD.
 - **Mobile**: Single-column stacked inputs with optimized padding and touch-safe interaction (3D tilt disabled for stability).
 
-![Mobile View](file:///Users/sohinibanerjee/.gemini/antigravity/brain/9c1e52eb-95ee-4583-b2b8-b47952f618cf/mobile_view_scrolled_1775232148116.png)
+![Mobile View](./docs/assets/mobile_view.png)
 
 ---
 
@@ -63,8 +68,8 @@ SkyTact is fully responsive. Whether you're in a desktop control center or holdi
 ### 1. Initialization
 Clone the repository and install dependencies:
 ```bash
-git clone https://github.com/sosush/Weather-app.git
-cd Weather-app
+git clone https://github.com/sosush/SkyTact.git
+cd SkyTact
 npm install
 ```
 
@@ -85,7 +90,7 @@ npm run dev
 ## 📸 Tactical Recon (Screenshots)
 
 ### Mission Control (Home)
-![Full Dashboard](file:///Users/sohinibanerjee/.gemini/antigravity/brain/9c1e52eb-95ee-4583-b2b8-b47952f618cf/skytact_dashboard_full_1775235398381.png)
+![Full Dashboard](./docs/assets/dashboard.png)
 
 ---
 
