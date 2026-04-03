@@ -1603,6 +1603,12 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  .tilt-card-wrapper {
+    transform: none !important; /* Disable tilt kinetics on touch devices */
+  }
+}
+
 .tilt-card-content {
   position: relative;
   height: 100%;
@@ -1680,9 +1686,41 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: none !important;
   border: 1.2px solid rgba(56, 189, 248, 0.4); 
   border-radius: 20px;
+  padding: 2rem; /* Initial desktop padding */
   overflow-y: auto;
   box-shadow: none !important;
   transition: all 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .floating-pane {
+    padding: 1rem; /* Reduced padding on mobile */
+  }
+}
+
+.app-header {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.app-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.app-title {
+  font-family: monospace;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.app-tagline {
+  font-family: monospace;
+  margin: 0;
 }
 
 .floating-pane:hover {
@@ -1695,8 +1733,23 @@ h1, h2, h3, h4, h5, h6 {
   }
   .floating-pane {
     width: 98%;
-    height: 85vh;
+    height: 94vh;
     border-radius: 12px;
+  }
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-title {
+    font-size: 1.5rem !important;
+  }
+  .app-tagline {
+    font-size: 0.6rem !important;
   }
 }
 
@@ -1743,12 +1796,13 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   bottom: 50px;
   right: 0;
-  width: 250px;
-  background: rgba(10, 14, 26, 0.9);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  width: 280px; /* Increased slightly for better text wrapping */
+  max-width: 85vw; /* Safety for tiny screens */
+  background: rgba(10, 14, 26, 0.95);
+  border: 1px solid rgba(56, 189, 248, 0.4);
   border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  padding: 1.25rem;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
   animation: slideInUp 0.2s ease-out;
   pointer-events: auto;
 }

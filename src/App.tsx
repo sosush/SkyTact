@@ -67,101 +67,98 @@ const App: React.FC = () => {
       {/* FLOATING DATA DASHBOARD */}
       <div className="floating-dashboard">
         <div className="floating-pane">
-          <div style={{ padding: '2rem' }}>
+          {/* Tactical Header */}
+          <header className="app-header">
+            <img src="/logo.png" alt="SkyTact Logo" className="app-logo" />
+            <div className="header-text">
+              <h1 className="app-title">SkyTact</h1>
+              <p className="app-tagline">ADVANCED AVIATION INTELLIGENCE</p>
+            </div>
+          </header>
 
-            {/* Tactical Header */}
-            <header className="app-header" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <img src="/logo.png" alt="SkyTact Logo" style={{ width: '48px', height: '48px' }} />
-              <div>
-                <h1 className="app-title" style={{ fontFamily: 'monospace', letterSpacing: '2px', margin: 0 }}>SkyTact</h1>
-                <p className="app-tagline" style={{ fontFamily: 'monospace', margin: 0 }}>ADVANCED AVIATION INTELLIGENCE</p>
-              </div>
-            </header>
+          {/* Input Planner */}
+          <RoutePlanner onRouteSubmit={handleRouteExecution} isLoading={isLoading} />
 
-            {/* Input Planner */}
-            <RoutePlanner onRouteSubmit={handleRouteExecution} isLoading={isLoading} />
+          {isLoading && <LoadingSpinner />}
+          {error && !isLoading && <ErrorMessage message={error} />}
 
-            {isLoading && <LoadingSpinner />}
-            {error && !isLoading && <ErrorMessage message={error} />}
+          {/* Routing Outputs */}
+          {hasData && !isLoading && !error && (
+            <div className="animate-slide-up mt-6">
 
-            {/* Routing Outputs */}
-            {hasData && !isLoading && !error && (
-              <div className="animate-slide-up mt-6">
+              {/* Tab Navigation */}
+              <nav className="tab-nav tactical-tabs mb-6" id="main-tab-nav">
+                {tabs.map(tab => (
+                  <button
+                    key={tab.key}
+                    className={`tab-btn ${activeTab === tab.key ? 'tab-btn-active tactical-active' : ''}`}
+                    onClick={() => setActiveTab(tab.key as TabKey)}
+                    disabled={tab.disabled}
+                  >
+                    <span className="hide-mobile" style={{ fontFamily: 'monospace', letterSpacing: '1px' }}>{tab.label}</span>
+                  </button>
+                ))}
+              </nav>
 
-                {/* Tab Navigation */}
-                <nav className="tab-nav tactical-tabs mb-6" id="main-tab-nav">
-                  {tabs.map(tab => (
-                    <button
-                      key={tab.key}
-                      className={`tab-btn ${activeTab === tab.key ? 'tab-btn-active tactical-active' : ''}`}
-                      onClick={() => setActiveTab(tab.key as TabKey)}
-                      disabled={tab.disabled}
-                    >
-                      <span className="hide-mobile" style={{ fontFamily: 'monospace', letterSpacing: '1px' }}>{tab.label}</span>
-                    </button>
-                  ))}
-                </nav>
+              {/* OVERVIEW TAB */}
+              {activeTab === 'overview' && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '1rem' }}>
+                  <EnRouteProfile
+                    flightPlan={routingData.flightPlan}
+                    routeWeather={routingData.routeWeather}
+                    hazards={routingData.hazards}
+                  />
 
-                {/* OVERVIEW TAB */}
-                {activeTab === 'overview' && (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '1rem' }}>
-                    <EnRouteProfile
-                      flightPlan={routingData.flightPlan}
-                      routeWeather={routingData.routeWeather}
-                      hazards={routingData.hazards}
-                    />
-
-                    {/* Summary boxes (FULL WIDTH) */}
-                    <TiltCard>
-                      <div style={{ padding: '1rem', textAlign: 'center' }}>
-                        <div className="card-header tactical-header" style={{ justifyContent: 'center' }}>
-                          <div className="card-title">Origin: {routingData.terminals.originEndpoint.icao}</div>
-                        </div>
-                        <div style={{ fontFamily: 'monospace' }}>
-                          <div>Condition: <span className="neon-text">{routingData.terminals.origin?.flightCategory || 'UNKN'}</span></div>
-                          <div>Temp: {routingData.terminals.origin?.temperatureCelsius ?? 'M'}°C</div>
-                        </div>
+                  {/* Summary boxes (FULL WIDTH) */}
+                  <TiltCard>
+                    <div style={{ padding: '1rem', textAlign: 'center' }}>
+                      <div className="card-header tactical-header" style={{ justifyContent: 'center' }}>
+                        <div className="card-title">Origin: {routingData.terminals.originEndpoint.icao}</div>
                       </div>
-                    </TiltCard>
-
-                    <TiltCard>
-                      <div style={{ padding: '1rem', textAlign: 'center' }}>
-                        <div className="card-header tactical-header" style={{ justifyContent: 'center' }}>
-                          <div className="card-title">Destination: {routingData.terminals.destEndpoint.icao}</div>
-                        </div>
-                        <div style={{ fontFamily: 'monospace' }}>
-                          <div>Condition: <span className="neon-text">{routingData.terminals.destination?.flightCategory || 'UNKN'}</span></div>
-                          <div>Temp: {routingData.terminals.destination?.temperatureCelsius ?? 'M'}°C</div>
-                        </div>
+                      <div style={{ fontFamily: 'monospace' }}>
+                        <div>Condition: <span className="neon-text">{routingData.terminals.origin?.flightCategory || 'UNKN'}</span></div>
+                        <div>Temp: {routingData.terminals.origin?.temperatureCelsius ?? 'M'}°C</div>
                       </div>
-                    </TiltCard>
-                  </div>
-                )}
+                    </div>
+                  </TiltCard>
 
-                {/* TERMINAL DETAILS TAB */}
-                {activeTab === 'terminal' && (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                    <TerminalBriefing
-                      airport={routingData.terminals.originEndpoint}
-                      metar={routingData.terminals.origin}
-                      type="Origin"
-                    />
-                    <TerminalBriefing
-                      airport={routingData.terminals.destEndpoint}
-                      metar={routingData.terminals.destination}
-                      type="Destination"
-                    />
-                  </div>
-                )}
+                  <TiltCard>
+                    <div style={{ padding: '1rem', textAlign: 'center' }}>
+                      <div className="card-header tactical-header" style={{ justifyContent: 'center' }}>
+                        <div className="card-title">Destination: {routingData.terminals.destEndpoint.icao}</div>
+                      </div>
+                      <div style={{ fontFamily: 'monospace' }}>
+                        <div>Condition: <span className="neon-text">{routingData.terminals.destination?.flightCategory || 'UNKN'}</span></div>
+                        <div>Temp: {routingData.terminals.destination?.temperatureCelsius ?? 'M'}°C</div>
+                      </div>
+                    </div>
+                  </TiltCard>
+                </div>
+              )}
 
-              </div>
-            )}
+              {/* TERMINAL DETAILS TAB */}
+              {activeTab === 'terminal' && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                  <TerminalBriefing
+                    airport={routingData.terminals.originEndpoint}
+                    metar={routingData.terminals.origin}
+                    type="Origin"
+                  />
+                  <TerminalBriefing
+                    airport={routingData.terminals.destEndpoint}
+                    metar={routingData.terminals.destination}
+                    type="Destination"
+                  />
+                </div>
+              )}
 
-            {/* Glossary at the bottom */}
-            {hasData && !isLoading && !error && (
-              <AviationLegend />
-            )}
-          </div>
+            </div>
+          )}
+
+          {/* Glossary at the bottom */}
+          {hasData && !isLoading && !error && (
+            <AviationLegend />
+          )}
         </div>
       </div>
     </div>
