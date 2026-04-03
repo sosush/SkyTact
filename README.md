@@ -11,7 +11,7 @@
 
 ---
 
-## 🛰️ The "Origin" Story: From 0.1 to MACH 1.0
+##  The "Origin" Story: From 0.1 to MACH 1.0
 
 We've all been there. Every budding developer has a "Weather App" sitting in their repository graveyard—a generic grid, some semi-opaque white cards, and an OpenWeatherMap API call that looks exactly like a thousand others.
 
@@ -23,25 +23,25 @@ SkyTact is the result of that transformation: a professional-grade aviation inte
 
 ---
 
-## 🚀 Core Mission Features
+##  Core Mission Features
 
-### 🌍 Performance-Based Geospatial HUD
+###  Performance-Based Geospatial HUD
 The heart of SkyTact is an interactive 3D globe powered by **Three.js** and **WebGL**. It's not just for show—flight paths are procedurally generated and styled based on aircraft performance:
 - **Commercial Jets (≥400 kts)**: Neon Cyan solid paths with high-frequency dash animations.
 - **Turboprops (≥200 kts)**: Golden Yellow dashed lines for medium-speed visual cues.
 - **General Aviation (<200 kts)**: Tactical Green dotted paths reflecting slower travel profiles.
 
-### 🗺️ Invisible Dashboard Design
+###  Invisible Dashboard Design
 Built on a "Hud-First" philosophy, the interface is a **95% width wide-screen tactical pane**. By purging blurs and opaque backgrounds, we've achieved a "completely transparent" dashboard that lets you see the world behind the data.
 
-### ⛈️ Real-Time Aviation Intelligence
+###  Real-Time Aviation Intelligence
 - **METAR Data Stream**: Live weather reports directly from `aviationweather.gov`.
 - **En-Route Profiling**: Vertical profile visualization of Great Circle routes with interpolated weather and hazard detection.
 - **Glossary HUD**: A minimalist, floating 'G' button for instant layman-friendly definitions of complex aviation terms (VFR, MVFR, IFR, etc.).
 
 ---
 
-## 🛠️ Technical Flight Deck
+##  Technical Flight Deck
 
 | Logic | Visualization | Data | Styles |
 |---|---|---|---|
@@ -50,7 +50,7 @@ Built on a "Hud-First" philosophy, the interface is a **95% width wide-screen ta
 
 ---
 
-## 📱 Multi-Device Command
+##  Multi-Device Command
 SkyTact is fully responsive. Whether you're in a desktop control center or holding an iPad on the ramp, the interface adapts:
 - **Desktop**: 1800px wide-screen tactical HUD.
 - **Mobile**: Single-column stacked inputs with optimized padding and touch-safe interaction (3D tilt disabled for stability).
@@ -59,7 +59,7 @@ SkyTact is fully responsive. Whether you're in a desktop control center or holdi
 
 ---
 
-## 🔧 Deployment Manual
+##  Deployment Manual
 
 ### Prerequisites
 - Node.js (v18+)
@@ -87,14 +87,14 @@ npm run dev
 
 ---
 
-## 📸 Tactical Recon (Screenshots)
+##  Tactical Recon (Screenshots)
 
 ### Mission Control (Home)
 ![Full Dashboard](./docs/assets/dashboard.png)
 
 ---
 
-## 🛡️ License
+##  License
 Distributed under the MIT License. Fly safe.
 
 ---
