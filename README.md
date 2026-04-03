@@ -1,106 +1,96 @@
-# ✈️ SkyTact: Mission-Critical Aviation Intelligence
+# 🛫 SkyTact: Advanced Aviation Intelligence
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/066cec59-76aa-4832-9e35-aeca1efd25bb" alt="SkyTact Banner" width="100%">
-</p>
+![SkyTact Banner](file:///Users/sohinibanerjee/.gemini/antigravity/brain/9c1e52eb-95ee-4583-b2b8-b47952f618cf/skytact_github_banner_1775235201009.png)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-</p>
-
-   ---
-
-## 📖 The "11th Hour" Pivot: The Story of SkyTact
-
-Every developer has that one generic "Beginner Weather App" sitting in a dusty folder—the kind we all build when we first learn to `fetch()` an API. **SkyTact** was nearly deleted. I was inches away from purging the repo to "clean up" my portfolio.
-
-**Then I had an epiphany:** *Why build what everyone else builds?*
-
-Instead of deleting it, I performed a total architectural overhaul. I stripped the engine, replaced the logic, and pivoted from a basic "Is it raining?" tracker to a high-fidelity **Aviation Intelligence Dashboard**. This project represents my ability to refactor, iterate, and transform a simple concept into a professional-grade tactical tool.
+> **Status**: Mission Ready. Deploying Tactical HUD... ⚡
 
 ---
 
-## 🛰️ What is SkyTact?
+## 🛰️ The "Origin" Story: From 0.1 to MACH 1.0
 
-Standard weather apps give you a single point. **SkyTact gives you a corridor.** 
+We've all been there. Every budding developer has a "Weather App" sitting in their repository graveyard—a generic grid, some semi-opaque white cards, and an OpenWeatherMap API call that looks exactly like a thousand others.
 
-Built for pilots, dispatchers, and aviation enthusiasts, SkyTact monitors the atmospheric conditions of an entire flight path. It bridges the gap between raw meteorological data and actionable flight intel.
+**SkyTact** was nearly one of those. 
 
-### 📍 The "Flight Path" Logic
-SkyTact tracks the weather at your **Source**, monitors conditions **En-Route**, and provides a briefing for your **Destination**—all in a single unified view.
+I thought about deleting it. Instead, I decided to gut the architecture, strip the "glassmorphism" fluff, and build something that felt like it belonged in a G550 flight deck. I traded basic clouds for **Great Circle Arcs**, generic temperatures for **METAR data feeds**, and simple 2D lists for a **high-precision 3D global visualization engine**.
 
-> [!IMPORTANT]
-> **[INSERT GIF HERE: A screen recording showing you entering a flight path (e.g., NYC to London) and the data updating dynamically]**
+SkyTact is the result of that transformation: a professional-grade aviation intelligence dashboard designed for situational awareness at a glance.
 
 ---
 
-## 🛠️ The Technical Arsenal
+## 🚀 Core Mission Features
 
-| Tech | Role | The "Recruiter" Reason |
-| :--- | :--- | :--- |
-| **Next.js / React** | Framework | Used for its high-performance rendering and optimized routing. |
-| **TypeScript** | Language | Implemented to ensure data integrity when handling complex weather objects. |
-| **Tailwind CSS** | UI/UX | Crafted a "Tactical Dark" theme optimized for low-light cockpit/dashboard environments. |
-| **Weather/Map APIs** | Intelligence | Integrated multi-endpoint data fetching to calculate atmospheric conditions across coordinates. |
-| **Framer Motion** | UX | Added subtle micro-interactions to make the dashboard feel like high-end flight software. |
+### 🌍 Performance-Based Geospatial HUD
+The heart of SkyTact is an interactive 3D globe powered by **Three.js** and **WebGL**. It's not just for show—flight paths are procedurally generated and styled based on aircraft performance:
+- **Commercial Jets (≥400 kts)**: Neon Cyan solid paths with high-frequency dash animations.
+- **Turboprops (≥200 kts)**: Golden Yellow dashed lines for medium-speed visual cues.
+- **General Aviation (<200 kts)**: Tactical Green dotted paths reflecting slower travel profiles.
 
----
+### 🗺️ Invisible Dashboard Design
+Built on a "Hud-First" philosophy, the interface is a **95% width wide-screen tactical pane**. By purging blurs and opaque backgrounds, we've achieved a "completely transparent" dashboard that lets you see the world behind the data.
 
-## 🎯 Applications & Utility
-
-- **Pre-Flight Briefing:** Quick glance at visibility, wind speeds, and cloud ceilings for departure and arrival.
-- **Logistics Planning:** Ideal for drone operators or small aircraft pilots needing to check if the "way ahead" is clear.
-- **Data Visualization:** A cleaner alternative to cluttered aviation sites, focusing only on mission-critical data.
+### ⛈️ Real-Time Aviation Intelligence
+- **METAR Data Stream**: Live weather reports directly from `aviationweather.gov`.
+- **En-Route Profiling**: Vertical profile visualization of Great Circle routes with interpolated weather and hazard detection.
+- **Glossary HUD**: A minimalist, floating 'G' button for instant layman-friendly definitions of complex aviation terms (VFR, MVFR, IFR, etc.).
 
 ---
 
-## 🚀 Visual Reconnaissance
+## 🛠️ Technical Flight Deck
 
-
+| Logic | Visualization | Data | Styles |
+|---|---|---|---|
+| **React 18** | **React-Globe.gl** | **AviationWeather API** | **Tactical CSS** |
+| **Vite** | **Three.js** | **OpenWeatherMap** | **Responsive HUD** |
 
 ---
 
-## ⚙️ Tactical Setup (Local Recon)
+## 📱 Multi-Device Command
+SkyTact is fully responsive. Whether you're in a desktop control center or holding an iPad on the ramp, the interface adapts:
+- **Desktop**: 1800px wide-screen tactical HUD.
+- **Mobile**: Single-column stacked inputs with optimized padding and touch-safe interaction (3D tilt disabled for stability).
 
-To deploy SkyTact to your own local environment:
+![Mobile View](file:///Users/sohinibanerjee/.gemini/antigravity/brain/9c1e52eb-95ee-4583-b2b8-b47952f618cf/mobile_view_scrolled_1775232148116.png)
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/sosush/SkyTact.git
-   ```
-2. **Install the dependencies:**
-   ```bash
-   npm install
-   ```
-3. **Configure Environment Intel:**
-   Create a .env.local and add your API credentials:
-   ```Env
-   NEXT_PUBLIC_WEATHER_API_KEY=your_key_here
-   ```
-4. **Initiate Launch:**
-   ```bash
-   npm run dev
-   ```
 ---
 
-## 🔭 The Flight Plan (Future Roadmap)
+## 🔧 Deployment Manual
 
-- Live Flight Overlays: Integrating Real-time ADS-B data via OpenSky Network.
+### Prerequisites
+- Node.js (v18+)
+- OpenWeatherMap API Key
 
-- METAR/TAF Translator: A toggle to switch between "Human Readable" and "Pilot METAR" code.
+### 1. Initialization
+Clone the repository and install dependencies:
+```bash
+git clone https://github.com/sosush/Weather-app.git
+cd Weather-app
+npm install
+```
 
-- Interactive Waypoints: Clickable map markers to see weather at specific coordinates on the line.
+### 2. Environment Configuration
+Create a `.env` file in the root directory:
+```env
+VITE_WEATHER_API_KEY=your_openweathermap_api_key_here
+```
+
+### 3. Launch
+Deploy the local development server:
+```bash
+npm run dev
+```
+
 ---
 
-## 👤 The Strategist
-Sohini Banerjee (sosush)
-Full-Stack Developer & Technical Problem Solver
-"I don't just build apps; I refactor the ordinary into the extraordinary."
-<p align="center">
-<a href="https://skytact.vercel.app/"><strong>Visit the Live Project</strong></a> |
-<a href="https://github.com/sosush"><strong>View Other Missions</strong></a>
-</p>
+## 📸 Tactical Recon (Screenshots)
 
+### Mission Control (Home)
+![Full Dashboard](file:///Users/sohinibanerjee/.gemini/antigravity/brain/9c1e52eb-95ee-4583-b2b8-b47952f618cf/skytact_dashboard_full_1775235398381.png)
+
+---
+
+## 🛡️ License
+Distributed under the MIT License. Fly safe.
+
+---
+**Crafted with ⚡ and Altitude.**
